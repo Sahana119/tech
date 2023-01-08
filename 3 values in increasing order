@@ -1,51 +1,37 @@
-#include<stdio.h>
- 
-void main()
-{
-    int a,b,c;
- 
-    printf("\n\nEnter three numbers=");
-    scanf("%d %d %d",&a,&b,&c);
- 
-    if (a<b && a<c)
-    {
-        if(b<c)
-        {
-            printf("%d %d %d",a,b,c);
-        }
-        else
-        {
-            printf("%d %d %d",a,c,b);
-            }
+
+            import java.util.Scanner; 
+
+class Main {
+  public static void main(String[] args) {
+
+    Scanner reader = new Scanner(System.in); 
+    System.out.println("Enter three numbers.");  //Use println instead of print, that way the input begins on the next line
+
+    double x = reader.nextDouble();
+    double y = reader.nextDouble(); 
+    double z = reader.nextDouble();
+
+    if (x >= y){ //In the three responses below, y is always before x.  
+            if (y >= z)
+                System.out.print("In order " + z + " "+ y + " " + x);
+
+            else if  (z >= x)
+                System.out.print("In order " + y + " "+ x + " " + z);
+
+            else if (x > z)
+                System.out.print("In order " + y + " " + z + " " + x);
     }
- 
-    else if (b<c && b<a)
-    {
- 
-        if (c<a)
-        {
-            printf("%d %d %d",b,c,a);
-        }
-     
-        else
-        {
-        printf("%d %d %d",b,a,c);
-        }
-         
+
+    if (y > x){// In the three responses below, x is always before y
+        if (z >= y)
+            System.out.print("In order " + x + " " + y + " "+ z);
+        else if (z >= x)
+            //System.out.print("In order " + y + " " + x + " " + z); //In this case, z has to be smaller than y.  The order was off
+            System.out.print("In order " + x + " " + z + " " + y);
+        else if (x > z)
+            //System.out.print("In order " + y + " " + z + " " + x);
+            System.out.print("In order " + z + " " + x + " " + y); //Y is the biggest.  The order here was off.  
     }
-     
-    else if (c<a && c<b)
-    {
- 
-        if (b<a)
-        {
-            printf("%d %d %d",c,b,a);
-        }
-     
-        else
-        {
-        printf("%d %d %d",c,a,b);
-        }
-         
-    }
-} 
+
+  }
+}
